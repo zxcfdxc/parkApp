@@ -1,0 +1,7 @@
+{
+  "name": "parkApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
