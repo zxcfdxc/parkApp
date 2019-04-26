@@ -1,0 +1,56 @@
+<!--
+  Generated template for the FindCarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我要寻车</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="tuDetail">
+  <div  *ngIf='isShow'>
+  <div>
+    <div class="width100">
+      <img class="tu" [src]="baseImgUrl+pageData.space.ImageAll" alt="">
+    </div>
+      <div class="divTiao box-shadow">{{pageData.about.ParkName}}</div>
+      </div>
+      
+      <div class="cheDetail">
+        <div class="divTiao " (throttleClick)="f_chosePlate()">车牌号：{{chosePlate}}    <ion-icon class="right" name="ios-arrow-forward"></ion-icon></div>
+        <div class="divTiao stopTime" *ngIf='pageData.real&&pageData.record'><ion-icon name="ios-time-outline"></ion-icon> {{useTime}}</div>
+        <div class="divTiao ">车位：{{pageData.space.SpaceNumber}}</div>
+        <div class="divTiao inTime " >入场时间：{{(pageData.record&&pageData.record.TimeEnter)||"无"}}</div>
+        <!-- <div class="divTiao flexChild justifyBetween"><span>预约时间</span><span>{{pageData.space.RecordTime}}</span></div> -->
+      </div>
+      
+      <div class="flexChild flex-column comDiv showFei" *ngIf="pageData.about.PriceFT">
+          <!-- <div class="fontS11 fontC6 shouTit">收费标准</div> -->
+          <!-- <div class="fontS13 fontC3 openTime ">
+            <div>营业时间：{{pageData.about.ChargableTime}}</div>
+          </div> -->
+          <div class="fontS10 fontC6 shoucont mgT5 ">
+              <div>收费标准</div>
+              <div>线上缴费：首小时{{pageData.about.PriceFT}}元/小时,之后{{pageData.about.Price}}元/{{pageData.about.TimeSlice}}分钟</div>
+          </div>
+          <!-- <div class="fontS10 fontC6 shoucont">
+            <div>大型车</div>
+            <div>{{pageData.about.PriceAboutB}}元/小时</div>
+          </div> -->
+        </div>
+      
+        <footer class='footer twoBtn fontC15'>
+            <div (throttleClick)='goCarMap()' > <ion-icon name="ios-navigate-outline"></ion-icon>&nbsp;车位位置</div>
+            <div class="shu"  ></div>
+            <div (throttleClick)='pay()'><ion-icon name="ios-card-outline"></ion-icon>&nbsp; 支付</div>
+          </footer>
+        </div>
+      
+</ion-content>
+

@@ -1,0 +1,51 @@
+page-chong-chewei {
+.inWei{
+    height: 18.4rem;
+    background-color: $themeColor;
+    display: flex;
+    align-items: center;
+   justify-content: center;
+    input{
+        margin-left: auto;
+        margin-right: auto;
+        width: 32rem;
+        max-width: 85%;
+        height: 5.3rem;
+        border-radius: 0.5rem;
+        border: solid 0.1rem #ffffff;
+        font-size: 1.8rem;
+        color: #ffffff;
+        background-color:$themeColor;
+        padding-left: 1.6rem;
+        &::-webkit-input-placeholder{
+            font-size: 1.8rem;
+            color: #ffffff;
+        }
+    }   
+}
+
+
+}
+.ComPai{
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: inset 0rem -0.05rem 0.1rem 0rem 
+		#e6e6e6;
+    img{
+        width: 1.5rem;
+    height: 1rem;
+    margin-right: 0.7rem;
+    }
+    >div{
+        align-items: center;
+    }
+    .plate{
+        font-size: 1.5rem;
+        color: #666666;
+        ion-icon{
+            margin-left: 4px;
+        }
+      
+    }
+    
+}

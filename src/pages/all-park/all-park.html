@@ -1,0 +1,74 @@
+<!--
+  Generated template for the AllParkPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{page.isChong?"可充电停车场":"所有停车场"}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <!-- 停车场列表 -->
+  <div class="parkList ">
+    <!-- {{page.data}} -->
+<div class="  flex-column flexChild bgC16 parkIm" *ngFor="let item of page.data " [hidden]='page.isChong&&(!item.IfCharging||item.IfCharging!=1)'>
+  
+  <div class="parkImT flex-column">
+  <div class="item-tit justifyBetween" (throttleClick)="goDetail(item.id)">
+    <div class="fontS15">{{item.ParkName}}<span *ngIf="item.IsOpen==0" class="colorRed">&nbsp;(暂未开放)</span></div>
+    <div class='fontC9 fontS13 alighC'> <span>详情</span> &nbsp;&nbsp;<ion-icon name="ios-arrow-forward"></ion-icon></div>
+  </div>
+  <div class="item-content flex-column mgT4">
+    <div class="fontS11 fontC9">{{item.PayAbout}}·{{item.ParkAbout}}</div>
+    <div class="justifyBetween fontS11 mgT2">
+      <div class="colorBlue maxw40p">价格：首小时{{item.PriceFT}}元/小时<br>之后{{item.Price}}元/{{item.TimeSlice}}分钟</div>
+      <div class="colorRed">剩余车位：{{item.ParkFreeSpaceNumber}}/个</div>
+      <div class="colorQi">距离：{{item.disText}}</div>
+    </div>
+  </div>
+  </div>
+  <!-- 普通 -->
+  <div *ngIf='!page.isChong'  class=" flex-column">
+  <div class="item-bot justifyAround fontS14  parkImB">
+    <div (throttleClick)='goChose(item.id)' *ngIf='item.IfRecord&&item.IfRecord==1' class="colorRed btn ripple"><ion-icon name="ios-time-outline"></ion-icon>&nbsp;预约</div>
+    <div (throttleClick)='goMapApp(item)' class="colorQi btn ripple"><ion-icon name="ios-navigate-outline"></ion-icon>&nbsp;导航 
+    </div>
+  </div>
+  <!-- 停车区 -->
+  <div *ngIf="(item.zone&&item.zone.length>0)&&!item.ishowQu" (click)="item.ishowQu=1" class="seeQ">查看停车区  <ion-icon name="arrow-down"></ion-icon></div>
+  <div class=" quIm flex-column bgC16 parkIm" *ngFor="let itemz of item.zone" [hidden]='itemz.InList==0||!item.ishowQu'>
+    <div class="parkImT flex-column">
+    <div class="itemz-tit justifyBetween">
+      <div class="fontS15">{{itemz.ZoneName}}<span *ngIf="itemz.IsOpen==0" class="colorRed">&nbsp;(暂未开放)</span></div>
+    </div>
+    <div class="itemz-content flex-column mgT4">
+      <div class="justifyBetween fontS11 mgT2">
+        <div class="colorRed">剩余车位：{{itemz.FreeSpaceNumber}}/个</div>
+        <div class="colorQi">距离：{{itemz.disText||"无"}}</div>
+      </div>
+    </div>
+  </div>  
+  <div class="item-bot justifyAround fontS14  parkImB">
+    <div (throttleClick)='goChose(item.id,itemz.id)' *ngIf='itemz.IfOrder&&itemz.IfOrder==0' class="colorRed btn ripple"><ion-icon name="ios-time-outline"></ion-icon>&nbsp;预约</div>
+    <div (throttleClick)='goMapApp(itemz)' class="colorQi btn ripple"><ion-icon name="ios-navigate-outline"></ion-icon>&nbsp;导航 
+    </div>
+  </div>
+    </div>
+    <div *ngIf="item.ishowQu" (click)="item.ishowQu=0" class="seeQ">收起停车区  <ion-icon name="arrow-up"></ion-icon></div>
+    
+</div>
+
+
+<!-- 充电 -->
+  <div *ngIf='page.isChong' class="item-bot justifyAround fontS14  parkImB chongTxt">
+    <div (throttleClick)='goChong(item.id)'  class="colorRed btn ripple"><ion-icon name="battery-charging"></ion-icon>&nbsp;开始充电</div>
+  </div>
+  </div>
+</div>
+</ion-content>

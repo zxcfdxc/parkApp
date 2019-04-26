@@ -1,0 +1,124 @@
+page-chong-state {
+    .topType{
+        height: 5rem;
+        padding: 2rem;
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        top: -1px;
+        z-index: 12223123;
+    color: #fff;
+    }
+   .cont{
+    position: absolute;
+    width: 100%;
+    overflow: hidden;
+    height: 24.7rem;
+    top: -1px;
+    z-index: 12223123;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #ffffff;
+    justify-content: center;
+    padding-bottom: 20px;
+    .havC{
+        font-size: 6rem;
+    }
+    .plant,.chong{
+        font-size: 1.5rem;
+    }
+   }
+
+.mid{
+    margin-top: 24.7rem;    
+    height: 16rem;
+    padding: 4rem 0rem;
+    .item{
+
+        img{
+            width: 2rem;
+            height: 2rem;
+        }
+        .dan{
+            font-size: 1.5rem;
+        }
+        font-size: 2rem;
+        color: #38bdef;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
+
+
+    @keyframes move_wave {
+        0% {
+            transform: translateX(0) translateZ(0) scaleY(1)
+        }
+        50% {
+            transform: translateX(-25%) translateZ(0) scaleY(0.55)
+        }
+        100% {
+            transform: translateX(-50%) translateZ(0) scaleY(1)
+        }
+    }
+    .waveWrapper {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+    }
+    .waveWrapperInner {
+        position: absolute;
+        width: 100%;
+        overflow: hidden;
+        height: 24.7rem;
+        top: -1px;
+        background-image: linear-gradient(to top, $themeColor 20%, lighten($themeColor,10%) 80%);
+    }
+    .bgTop {
+        z-index: 15;
+        opacity: 0.5;
+    }
+    .bgMiddle {
+        z-index: 10;
+        opacity: 0.75;
+    }
+    .bgBottom {
+        z-index: 5;
+    }
+    .wave {
+        position: absolute;
+        left: 0;
+        width: 200%;
+        height: 100%;
+        background-repeat: repeat no-repeat;
+        background-position: 0 bottom;
+        transform-origin: center bottom;
+    }
+    .waveTop {
+        background-size: 50% 40px;
+    }
+    .waveAnimation .waveTop {
+      animation: move-wave 3s;
+       -webkit-animation: move-wave 3s;
+       -webkit-animation-delay: 1s;
+       animation-delay: 1s;
+    }
+    .waveMiddle {
+        background-size: 50% 50px;
+    }
+    .waveAnimation .waveMiddle {
+        animation: move_wave 10s linear infinite;
+    }
+    .waveBottom {
+        background-size: 50% 40px;
+    }
+    .waveAnimation .waveBottom {
+        animation: move_wave 15s linear infinite;
+    }
+}

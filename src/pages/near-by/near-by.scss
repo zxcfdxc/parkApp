@@ -1,0 +1,22 @@
+page-near-by {
+ .main{
+     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+ }
+.map{
+    
+    flex-grow: 1;
+    display: flex;
+    #container,.mapMain{
+        height: auto;
+        flex-grow: 1;
+    }
+}
+.parkList{
+    max-height: 240px;
+    overflow-y: scroll;
+}
+
+}

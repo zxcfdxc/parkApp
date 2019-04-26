@@ -1,0 +1,24 @@
+<!-- Generated template for the PMessComponent component -->
+<div  [class]="page.rId">
+<yanzheng (yanNum)="page.imgKey=$event" [tel]="telN"></yanzheng>
+<div class="faYanMain">
+  <form class="pass-form form360" [formGroup]="miForm"   name="pass_form" novalidate >
+     <label for="passMi">
+       <input class="pass-input Jpass" (keyup)="filtNum($event,'yanKey')" (paste)="filtNum($event,'yanKey')" formControlName='passMi' [(ngModel)]='page.yanKey'   maxlength="5" />
+       <div class="pass-border-box">
+         <span class="pass-border"></span>
+         <span class="pass-border"></span>
+         <span class="pass-border"></span>
+         <span class="pass-border"></span>
+         <span class="pass-border"></span>
+         <div class="faguang Jfaguang"></div>
+       </div>
+     </label>
+    
+       </form>
+   <div>
+       <button ion-button class="yanHuo yanBt " *ngIf="!page.isSent" (click)="sendMsg()">获取短信验证码</button>
+       <button ion-button disabled class="yanChong yanBt "  *ngIf="page.isSent">{{page.lessSec}}秒后可重发</button>
+       </div>
+</div>
+</div>

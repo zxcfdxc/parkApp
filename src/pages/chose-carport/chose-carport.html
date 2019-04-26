@@ -1,0 +1,62 @@
+<!--
+  Generated template for the ChoseCarportPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{page.isOnlyChong?"预约充电桩":"预约停车区"}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="fff">
+  <div class="top" (throttleClick)='f_chosePlate()'>
+   {{page.iPlate}}
+    <ion-icon name="md-arrow-dropdown"></ion-icon>
+  </div>
+  <ion-list class="imgCent noTopline">
+      <ion-item class='item-eb' (throttleClick)='chosePlace()'>
+         
+          <!-- <ion-select[(ngModel)]="employee" canceltext="取消"  interface="popover" oktext="确定" class="select select-ios ng-untouched ng-pristine ng-valid">
+              <ion-option *ngFor="let employee of page.data.zone" [value]="employee"></ion-option>     
+        </ion-select>
+              
+            <ion-icon name="ios-arrow-forward"></ion-icon> -->
+
+
+            <ion-label> <img src="./assets/imgs/choseCar/fq.png" alt=""> 选择区域</ion-label>
+            <ion-select [(ngModel)]="page.zoonId" cancelText="取消"  okText="确定" >
+              <ion-option *ngFor="let zoonId of  page.data.zone" [value]="zoonId.id">{{zoonId.ZoneName}}</ion-option>
+            </ion-select>
+
+        </ion-item>
+        <ion-item class='item-eb' >
+          <ion-label><img src="./assets/imgs/choseCar/sj.png" alt="">预约时间</ion-label>  
+          选择时间
+          <ion-datetime  (throttleClick)='choseTime(page.data);styleTime()' minuteValues="{{page.minShowA}}"  
+          displayFormat="MM-DD HH:mm" pickerFormat="MMMM-DDDD HH:mm"
+          min="{{page.dateStart}}"  max="{{page.dateEnd}}" cancelText="取消" doneText="确认" [(ngModel)]="page.sqsj"></ion-datetime> 
+          {{page.minShow}}
+        </ion-item>
+        <ion-item class='item-eb' *ngIf="!page.isOnlyChong" (throttleClick)='page.isChong=!page.isChong'>
+            <ion-label>  <img src="./assets/imgs/choseCar/cd.png" alt="">充电桩车位</ion-label>
+
+          <ion-toggle [(ngModel)]="page.isChong"></ion-toggle>
+            
+        </ion-item>
+  </ion-list>
+  <div (throttleClick)="showImg(page.data.ParkPic)" class="seeImg">查看车场缩略图</div>
+  <div class="com-mes pd10">
+    提示：<br>
+    预约成功将扣除3元预约费用，停车时长从预约成功开始计算，预扣费用冲抵停车费。
+  </div>
+<div class="comBtnM">
+  <button ion-button (throttleClick)='freeCarInfo()' >确认预约</button>
+  <!-- <button ion-button (throttleClick)='yuYueCancel()'>取消预约</button> -->
+</div>
+ 
+</ion-content>

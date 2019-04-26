@@ -1,0 +1,18 @@
+page-contact {
+.comBtnM{
+    position: fixed;
+    bottom: 40px;
+    button{
+       background-color: #ef6764;
+    }
+    button:hover:not(.disable-hover).activated{
+        background-color: #eb413d;
+    }
+    button:hover:not(.disable-hover){
+        background-color: #ef6764;
+    }
+    button.activated{
+        background-color: #eb413d;
+    }
+}
+}

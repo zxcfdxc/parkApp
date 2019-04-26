@@ -1,0 +1,33 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+          设置
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+    <ion-list class="botlineEd">
+   
+              <button ion-item (click)="navCtrl.push('FeedbackPage')">
+                  意见反馈
+                <ion-note item-end="" class="note ">
+              <ion-icon name="ios-arrow-forward"></ion-icon>
+              </ion-note>
+                  </button>
+                  <button *ngIf="!tools.isMobileweb()&&pageData.nowV" ion-item (click)='upApp()'>
+                    当前版本
+                    <ion-note item-end="" class="note note-ios">
+                      {{pageData.nowV}}
+              <ion-icon name="ios-arrow-forward"></ion-icon>
+              </ion-note>
+                      </button>
+                      <button ion-item (click)='navCtrl.push("AboutUsPage")'>
+                          关于我们
+                        <ion-note item-end="" class="note note-ios">
+              <ion-icon name="ios-arrow-forward"></ion-icon>
+              </ion-note>
+                          </button>
+    </ion-list>
+  </ion-content>
+  

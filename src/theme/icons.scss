@@ -1,0 +1,23 @@
+// @import "../assets/fonts/iconfont.css";
+
+ion-icon.tab-button-icon {
+    font-family:"iconfont" !important;
+   
+}
+
+ion-icon[class*="homei"]{
+    &:before{ 
+    content: "\e99d";
+  
+}}
+ion-icon[class*="nearby"]{
+    &:before{ 
+    content: "\e609";
+}
+}
+ion-icon[class*="my"]{
+    &:before{ 
+    content: "\e62f";
+}
+}
+$tabs-ios-tab-icon-size:24px;

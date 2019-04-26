@@ -1,0 +1,91 @@
+<!--
+  Generated template for the MesCenterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>消息中心</ion-title>
+  </ion-navbar>
+  <div >
+      <ion-segment [(ngModel)]="pet">
+          <ion-segment-button value="import"  (throttleClick)="pageData.infscroll=true">
+              重要通知
+            </ion-segment-button>
+        <ion-segment-button value="sys" (throttleClick)="pageData.infscroll=true">
+          系统消息
+        </ion-segment-button>
+       
+     
+      </ion-segment>
+    </div>
+</ion-header>
+
+<ion-content >
+    <ion-refresher (ionRefresh)="doRefresh($event)"> 
+        <ion-refresher-content
+            pullingIcon="arrow-dropdown"
+            pullingText="下拉刷新"
+            refreshingSpinner="circles"
+            refreshingText=""> 
+        </ion-refresher-content>
+        <ion-refresher-content > 
+    </ion-refresher-content>
+    </ion-refresher>
+ 
+      
+      <div [ngSwitch]="pet">
+        <div class="list" *ngSwitchCase="'sys'" >
+              <div  class="flex bgC16 mes-item" *ngFor="let item of pageData.sysData">
+                <div class="flex flex-column width100">
+                  <div class="flexChild item-top flex-column">
+                  <div class=" item-tit justifyBetween">
+                    <div class="">{{item.title}}</div>
+                    <div class='fontC6  alighC time'>{{item.time}} </div>
+                  </div>
+                </div>
+                  <div class="item-content   mgT10" [innerHTML]="assembleHTML(item.content)">
+                  </div>
+              </div>
+          </div>
+
+          <div *ngIf="pageData.sysData.length==0"  class="onmore">
+            <span class="more-line"></span><span>&nbsp;没有消息&nbsp; </span><span  class="more-line"></span>
+          </div>
+        </div>
+      
+        <div  class="list" *ngSwitchCase="'import'">
+          <div  class="flex bgC16 mes-item" *ngFor="let item of pageData.importData">
+            <div class="flex flex-column width100">
+               <div class="flexChild item-top flex-column">
+               <div class=" item-tit justifyBetween">
+                 <div class="">{{item.title}}</div>
+                 <div class='fontC6  alighC time'>{{item.time}} </div>
+               </div>
+             </div>
+               <div class="item-content   mgT10" [innerHTML]="assembleHTML(item.content)">
+               </div>
+          
+             
+           </div>
+       </div>
+
+       <div *ngIf="pageData.importData.length==0"  class="onmore">
+        <span class="more-line"></span><span>&nbsp;没有消息&nbsp; </span><span  class="more-line"></span>
+      </div>
+        </div>
+     
+    </div>
+      <!--下滑的时候，加载数据-->
+      <div *ngIf='pageData.infscroll'>
+<ion-infinite-scroll (ionInfinite)="doInfinite($event)" > 
+    <ion-infinite-scroll-content
+     loadingSpinner="bubbles"
+     loadingText="加载中..."> 
+     </ion-infinite-scroll-content> 
+ </ion-infinite-scroll>
+</div>
+</ion-content>

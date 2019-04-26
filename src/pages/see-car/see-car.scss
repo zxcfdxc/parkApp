@@ -1,0 +1,62 @@
+page-see-car {
+    $vhHeight:85%;
+    .seeCarMain{
+        display: flex;
+        justify-content: space-around;
+        padding-left: 30px;
+        padding-right: 10px;
+        padding-top: 10px;
+        // padding-bottom: 67px;
+        align-items: flex-start;
+        height: $vhHeight;
+        // overflow-y: scroll;
+    }
+ .left{
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+    .quKuang{
+    position: absolute;
+    border: 1px solid #ededed;
+    background-color: rgba($color: #fff, $alpha: 0);
+    transition:all .1s ease-in 0s;
+
+    }
+    .quKuang.selected {
+        border: 2px solid $themeColor;
+     
+    }
+    img{
+        width: 75px;
+    }
+    .lbiao{
+        // position: absolute;
+      width: 16px;
+      height: 20px;
+      z-index: 3000;
+    }
+ }
+
+ .mapMain{
+   height: 100%;
+    overflow-y: scroll;
+    // align-self: flex-end;
+ }
+ 
+        .comBtnM {
+            text-align: center;
+             width: 100%;
+          }
+          
+          .comBtnM .comBtn, .comBtnM button {
+            width: 49%;}
+    }
+    .mapMain{
+       .biaoT{
+        background: #fff;
+        padding:1px 4px;
+       margin-left: -4px;
+       border-radius: 7px;
+       margin-bottom: 2px;
+       }
+    }

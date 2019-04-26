@@ -1,0 +1,55 @@
+<!--
+  Generated template for the CurrentCarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>实时信息</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="tuDetail" >
+    <div>
+      <div class="width100">
+        <img class="tu" [src]="baseImgUrl+pageData.about.Picture" alt="">
+      </div>
+        <div class="divTiao box-shadow">{{pageData.about.ParkName}}</div>
+        </div>
+        
+        <div class="cheDetail">
+          <div class="divTiao ">{{pageData.space.NumberPlate}}</div>
+          <div class="divTiao stopTime"><ion-icon name="ios-time-outline"></ion-icon> {{lastTime}}</div>
+          <div class="divTiao ">车位：{{pageData.space.SpaceNumber}}</div>
+          <div class="divTiao inTime " *ngIf='pageData.record'>入场时间：{{pageData.record.TimeEnter}}</div>
+          <!-- <div class="divTiao flexChild justifyBetween"><span>预约时间</span><span>{{pageData.space.RecordTime}}</span></div> -->
+        </div>
+        
+        <div class="flexChild flex-column comDiv showFei">
+            <!-- <div class="fontS11 fontC6 shouTit">收费标准</div> -->
+            <div class="fontS13 fontC3 openTime ">
+              <div>营业时间：{{pageData.about.ChargableTime}}</div>
+             
+            </div>
+            <div class="fontS10 fontC6 shoucont ">
+                <div>收费标准</div>
+                <div>线上缴费：首小时{{pageData.about.PriceFT}}元/小时,之后{{pageData.about.Price}}元/{{pageData.about.TimeSlice}}分钟</div>
+            </div>
+            <!-- <div class="fontS10 fontC6 shoucont">
+              <div>大型车</div>
+              <div>{{pageData.about.PriceAboutB}}元/小时</div>
+            </div> -->
+          </div>
+        
+          <footer class='footer twoBtn fontC15'>
+              <div (throttleClick)='goChose(pageData.id)' > <ion-icon name="ios-time-outline"></ion-icon>&nbsp;支付</div>
+              <div class="shu"  ></div>
+              <div (throttleClick)='goCarMap()'><ion-icon name="ios-navigate-outline"></ion-icon>&nbsp; 车位导航</div>
+            </footer>
+      
+        
+</ion-content>

@@ -1,0 +1,54 @@
+<!--
+  Generated template for the ForgetmPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>重设密码</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content >
+  <div *ngIf="page.isNoTel" class="tel">手机号：{{page.tel}}</div>
+  <div class="inputMain" *ngIf="!page.isNoTel">
+    <input  
+    type="tel" class="comInput inTel" (keyup)="filtNum($event,'tel')" (paste)="filtNum($event,'tel')"[(ngModel)]="page.tel" maxlength="11"  placeholder="手机号码">
+  </div>
+  <p-mess (yanN)="saveData($event)" [telN]=page.tel [reqType]=page.reqType ></p-mess>
+    <!-- <div class="faYanMain">
+        <form class="pass-form form360" [formGroup]="miForm"   name="pass_form" novalidate >
+            <label for="passMi">
+              <input class="pass-input Jpass" (keyup)="filtNum($event,'yanKey')" (paste)="filtNum($event,'yanKey')" formControlName='passMi' [(ngModel)]='page.yanKey' autofocus  maxlength="5" />
+              <div class="pass-border-box">
+                <span class="pass-border"></span>
+                <span class="pass-border"></span>
+                <span class="pass-border"></span>
+                <span class="pass-border"></span>
+                <span class="pass-border"></span>
+                <div class="faguang Jfaguang"></div>
+              </div>
+            </label>
+           
+              </form>
+          <div>
+              <button ion-button class="yanHuo yanBt " *ngIf="!page.isSent" (throttleClick)="sendMsg()">获取验证码</button>
+              <button ion-button disabled class="yanChong yanBt "  *ngIf="page.isSent">{{page.lessSec}}秒后可重发</button>
+              </div>
+      </div> -->
+        <div class="inMain yan">
+          <input (keyup)="filtKey($event,'key')" type="{{page.inType}}" class="yanIn"  [(ngModel)]="page.key"  maxlength="11" minlength="6" placeholder="输入新密码,6-11位">
+          <ion-icon class="eye" name="{{page.inType=='password'?'eye-off':'eye'}}" (throttleClick)="page.inType=page.inType=='password'?'text':'password'"></ion-icon>
+         
+        </div>
+        <div class="inMain yan">
+          <input (keyup)="filtKey($event,'key2')"  type="{{page.inType2}}" class="yanIn"  [(ngModel)]="page.key2"  maxlength="11" minlength="6" placeholder="请您再次输入密码">
+          <ion-icon class="eye" name="{{page.inType2=='password'?'eye-off':'eye'}}" (throttleClick)="page.inType2=page.inType2=='password'?'text':'password'"></ion-icon>
+        </div>
+        <div class="comBtnM mgT45">
+      <button   [disabled]="page.key.length<6"  class="comBtn" ion-button (throttleClick)="next()">确定</button>
+  </div>
+    </ion-content>

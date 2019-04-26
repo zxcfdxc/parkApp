@@ -1,0 +1,37 @@
+page-mes-center {
+    .header::after{
+        background-image: none;
+      }
+     
+ 
+      .segment{
+          padding:  0px 20px;
+          background-color: #fff;
+          color: #000
+      }
+
+  
+      .list{
+        
+        .mes-item{
+          // width: 35rem;
+	// height: 8rem;
+	background-color: #ffffff;
+	border-radius: 0.3rem;
+	border: solid 0.05rem #ededed;
+          margin: 0.5rem 0.5rem 0 0.5rem;
+          font-size: 1.2rem;
+  color: #333333;
+  padding: 1.45rem 1.45rem 1.3rem 1.45rem;
+        
+  .item-content{
+    color:#666;
+    line-height: 17px;
+  }
+}      
+     .time{
+      flex-shrink:0;
+      margin-left: 5px;
+     }
+      }
+}

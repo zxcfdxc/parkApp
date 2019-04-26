@@ -1,0 +1,26 @@
+<!--
+  Generated template for the CouponPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>优惠券</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <div class="quan" *ngFor="let item of pageData">
+    <div class="tetM">  
+    <div class="endTime">过期时间:{{item.endTime}}</div>
+      <div class="money">{{item.amount}}元</div> 
+    </div>
+  </div>
+  <div *ngIf="pageData.length==0"  class="onmore">
+    <span class="more-line"></span><span>&nbsp;没有优惠券&nbsp; </span><span  class="more-line"></span>
+  </div>
+</ion-content>

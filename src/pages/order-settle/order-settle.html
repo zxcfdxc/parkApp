@@ -1,0 +1,52 @@
+<!--
+  Generated template for the OrderSettlePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>账单支付</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="top">
+    <div class="tit">合计费用</div>
+    <div class="money">¥ 40.00 </div>
+    <div class="msg">
+      <!-- 已停车<span>1小时20分钟</span>，已充电<span>1小时20分钟</span>  ， -->
+      注意！付款以后需15分钟内离场
+    </div>
+  </div>
+  <div class="mid">
+
+      <ion-list radio-group [(ngModel)]="pageData.payType" class="payM">
+
+          <div class="tit">
+              付款方式
+            </div>
+            <ion-item>
+              <ion-label> <img src="./assets/imgs/puz.png" alt=""> 余额  <span class="yu">（账户余额 ¥20.00元）</span> </ion-label>
+              <ion-radio value="3"  ></ion-radio>
+            </ion-item>
+          <ion-item>
+            <ion-label> <img src="./assets/imgs/wz.png" alt=""> 微信支付</ion-label>
+            <ion-radio value="1"  ></ion-radio>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label><img src="./assets/imgs/zz.png" alt=""> 支付宝支付</ion-label>
+            <ion-radio value="2"  ></ion-radio>
+          </ion-item>
+        
+        </ion-list>
+
+  </div>
+  <div class="comBtnM  mgT10">
+      <button ion-button (throttleClick)='pay()'>确认支付</button>
+    </div>
+</ion-content>

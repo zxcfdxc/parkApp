@@ -1,0 +1,85 @@
+<!--
+  Generated template for the AccountPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+
+<ion-content >
+  <div class="top flexChild">
+    <div class="xian">
+        <!-- 今限行:{{limit}} -->
+        <ion-slides direction="vertical"   [autoplay]='3000' [loop]='true' class="temSlides" effect='slide' >
+            <ion-slide  >
+                今限行:{{limit}}
+            </ion-slide>
+            <ion-slide *ngIf="weatherD.wWeather" >
+               {{weatherD.wWeather}}&nbsp;{{weatherD.wTemper}}℃
+            </ion-slide>
+          </ion-slides>
+    </div>
+    <div (click)='checkLog()&&goDatil()'>
+      <div>
+        <img src="./assets/imgs/account/tou.png" alt="">
+      </div>
+      <div class="flex-column justifyAround">
+        <div class="topU" *ngIf="tools.isLogin()==1">用户名：{{pageData.user.UserName}}</div>
+        <div class="topU" *ngIf="tools.isLogin()!=1">登录/注册</div>
+        <!-- <div class="topU">手机号：{{pageData.user.Tel}}</div> -->
+      </div>
+    </div>
+  </div>
+  <ion-list class="imgCent noTopline">
+    <ion-item class='item-eb ripple ' (click)='checkLog()&&navCtrl.push("MyAccountPage")'>
+      <img src="./assets/imgs/account/chongzhi.png" > <span [class]="isNewYou?'red-point':''" >我的账户</span>
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <ion-item class='item-eb ripple'(click)='checkLog()&&navCtrl.push("MycarPage")'>
+      <img src="./assets/imgs/account/myCar.png" alt=""> 我的车辆
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <ion-item class='item-eb ripple'(click)='checkLog()&&navCtrl.push("AppointDetailPage")'>
+        <img src="./assets/imgs/account/myAppoint.png" alt=""><span>我的预约</span>
+        <ion-note item-end="" class="note note-ios">
+          <ion-icon name="ios-arrow-forward"></ion-icon>
+        </ion-note>
+      </ion-item>
+    <ion-item class='item-eb ripple'(click)='checkLog()&&navCtrl.push("HistoryPage")'>
+      <img src="./assets/imgs/account/history.png" alt=""> 历史记录
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <ion-item class='item-eb ripple ' (click)='navCtrl.push("MesCenterPage")'>
+      <img src="./assets/imgs/account/message.png" alt="" class="red-point"> 消息中心
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <ion-item class='item-eb ripple' (click)='navCtrl.push("HelpListPage")'>
+      <img src="./assets/imgs/account/help.png" alt=""> 使用帮助
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <ion-item class='item-eb ripple'(click)='navCtrl.push("SettingPage")'>
+      <img src="./assets/imgs/account/system.png" alt=""> 系统设置
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item>
+    <!-- <ion-item class='item-eb ripple'(click)='checkLog()&&navCtrl.push("AboutUsPage")'>
+      <img src="./assets/imgs/account/us.png" alt=""> 关于我们
+      <ion-note item-end="" class="note note-ios">
+        <ion-icon name="ios-arrow-forward"></ion-icon>
+      </ion-note>
+    </ion-item> -->
+  </ion-list>
+</ion-content>

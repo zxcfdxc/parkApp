@@ -1,0 +1,59 @@
+page-my-account {
+ .yuMain{
+    width: 11rem;
+	height: 11rem;
+    background-color: #38bdef;
+    padding: 3.5rem 0 3.5rem 0;
+    
+    color: #fff;
+    border-radius: 6rem;
+    font-size: 2rem;
+    text-align: center;
+    margin: 2rem auto;
+    .tit{
+       
+    }
+ }
+ .shuo{
+   padding: 20px;
+    color: #777;
+    .tit{
+        font-size: 13px;
+    }
+    .con{
+        font-size: 12px;
+    }
+
+}
+ .btnlist{
+     padding-left: 3rem;
+     padding-right: 3rem;
+     display: flex;
+     justify-content: center;
+     button{
+    width: 14rem;
+	height: 4rem;
+	background-color: #ffffff;
+	border-radius: 2rem;
+    border: solid 0.1rem #38bdef;
+    font-size: 1.5rem;
+
+	line-height: 3.8rem;
+	letter-spacing: 0.1rem;
+    color:#38bdef;
+    &.activated{
+        background-color:#73ccec;
+        color: #fff;
+    }
+     }
+     img{
+        width: 1.5rem;
+        height: 1.5rem;
+        margin-top: -2px;
+        margin-right: 2px;
+     }
+ }
+ ion-list.list {
+     margin-top: 3rem;
+ }
+}

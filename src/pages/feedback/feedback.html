@@ -1,0 +1,41 @@
+<!--
+  Generated template for the FeedbackPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>意见反馈</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+   <div>
+     <div class="tit">请选择您要反馈的问题类型</div>
+     <ion-grid class="leiXing">
+       <ion-row>
+          <ion-col *ngFor="let item of pageData.data" class="leiItem" col-4>
+<label for="type{{item.id}}"  [class]="pageData.type.indexOf(item.id)!=-1?'current':''">{{item.name}}</label>
+              <input type="checkbox" name="type" id="type{{item.id}}" (throttleClick)="check(item.id)">
+            </ion-col>
+       </ion-row>
+       
+     </ion-grid>
+   </div>
+   <div >
+    <div class="tit">详细问题描述</div>
+    <div class="qMain">
+    <textarea class="qcontent" [(ngModel)]="pageData.content" maxlength="255" name="" id="" cols="30" rows="10" placeholder="请输入您的反馈意见（255字以内）"></textarea>
+  </div>
+  </div>
+  
+  <div class="comBtnM mgT20">
+    <button ion-button (throttleClick)='upMes()' [disabled]="!pageData.content">提交</button>
+  </div>
+  
+
+</ion-content>

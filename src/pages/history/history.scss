@@ -1,0 +1,69 @@
+page-history {
+    .header::after{
+        background-image: none;
+      }
+      .segment{
+        padding:  0px 20px;
+        background-color: #fff;
+        color: #000
+    }
+    .his-item.item.item-block {
+        margin-bottom: 5px;
+        .item-inner {
+        border-bottom: 0px !important;
+      }
+  
+      
+
+      .item-content{
+          img{
+            width: 1.8rem;
+            height: 1.4rem;
+            margin-right: 3px;  
+          }
+      }
+    }
+    .money-item.item{
+      height: 7.1rem;
+      background-color: #ffffff;
+      box-shadow: inset 0rem -0.05rem 0rem 0rem   #ededed;
+      & *{
+        align-items: center;
+      } 
+    .monMain{
+      flex-grow: 1;
+     align-items: flex-start;
+      // width: 300px;
+      .mon{
+        justify-content: flex-start;
+        font-size: 1.3rem;
+      }
+      .place{
+        justify-content: flex-start;
+        font-size: 1.2rem;
+      }
+     
+    }
+    .plate{
+      font-size: 1.4rem;
+     
+    }
+        .time{
+          font-size: 1.3rem;
+  color: #808080;
+  // align-items: center;
+        }
+        .imgP{
+          margin-left: 1.5rem;
+          margin-right:1.5rem;
+          background: url("../assets/imgs/cdp.png") no-repeat;
+          &.imgY{
+            background: url("../assets/imgs/yue.png") no-repeat;
+            background-size: 100% 100%;
+          }
+          background-size: 100% 100%;
+          width: 3.4rem;
+	height: 3.4rem;
+        }
+    }
+}

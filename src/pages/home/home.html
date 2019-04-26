@@ -1,0 +1,143 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        <ion-slides #sildesXian direction="vertical"   [autoplay]='10000' [loop]='true' class="temSlides" effect='slide' >
+            <ion-slide  >
+                今限行:{{page.limit}}
+            </ion-slide>
+            <ion-slide *ngIf="page.wWeather" >
+               {{page.wWeather}}&nbsp;{{page.wTemper}}℃
+            </ion-slide>
+          </ion-slides>
+          <ion-slides #sildesGong  direction="vertical"  *ngIf='page.gongGao.length>=1' [autoplay]='3000' [loop]='true' class="gongSlides" effect='slide'  (throttleClick)="goGong()" >
+              <ion-slide  *ngFor="let item of page.gongGao" >
+              {{item.title}}
+              </ion-slide>
+            </ion-slides>
+          <!-- <ion-slides #sildesGong direction="vertical"   [autoplay]='3000' [loop]='true' class="gongSlides" effect='slide' >
+            <ion-slide  *ngFor="let item of page.gongGao " >
+          sd
+            </ion-slide>
+         
+          </ion-slides> -->
+     </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="fff" >
+    <!-- <div *ngIf="slides2" class="{{slides2.getActiveIndex()}}" ></div> -->
+  <!-- 轮播 -->
+    <ion-slides #sildesg  pager  *ngIf='page.loop.length>=1' [autoplay]='3000' [loop]='true' class="gSlides" effect='fade'  (throttleClick)="goGuan()" >
+      
+        <ion-slide  *ngFor="let item of page.loop ; let i = index;" >
+          <div   [class]="i">
+         <img src="{{page.baseImgU+item.img}}"   alt="">
+        </div>
+         <!-- 1231231 -->
+        </ion-slide>
+      </ion-slides>
+    
+      <!-- 头导航 -->
+  <ion-grid>
+    <ion-row class="home_dao">
+      <ion-col col-3 (throttleClick)="goPay()" class="ripple" >
+
+        <div></div>
+        <div>我要缴费</div>
+      </ion-col>
+      <ion-col col-3 (throttleClick)='goAllpark(2)'>
+          <div></div>
+          <div>{{page.appiontText}}</div>
+      </ion-col>
+      <ion-col col-3  (throttleClick)="goAllpark(1)">
+        <div></div>
+        <div>我要充电</div>
+    </ion-col>
+      <ion-col col-3 (throttleClick)='goFindCar()'>
+          <div></div>
+          <div>我要寻车</div>
+      </ion-col>
+  
+    </ion-row>
+  </ion-grid>
+  <!-- 车场地图 -->
+  <div class="map">
+      <div class="mapMain" id="containerh" #containerh></div>
+  </div>
+  <!-- 附近 -->
+  <div>
+    <!-- <ion-list >
+      <ion-item *ngFor="let  of " (throttleClick)="" >
+        {{}}
+        <div></div>
+      </ion-item>
+    </ion-list> -->
+    <div class="tit">停车场信息</div>
+    <ion-list>
+        <div *ngFor="let item of page.data; index as i" [hidden]="i>1" >
+        <ion-item class='item-eb' *ngIf="i<=1">
+         
+            <ion-thumbnail item-end (throttleClick)='goMapApp(item)'class="center">
+              <div class="center flex-column">
+              <div class="goIcon"></div>
+              <div class="distant">{{item.disText}}</div>
+            </div>
+            </ion-thumbnail>
+            <div (throttleClick)="goDetail(item.ParkID||item.id)">
+            <h2 class="pName">{{item.ParkName||item.ZoneName}}<span *ngIf="item.IsOpen==0" class="colorRed">&nbsp;(暂未开放)</span></h2>
+            <p class="zhiChi">{{item.PayAbout}}·{{item.ParkAbout}}</p>
+            <div class="lessP">
+              <span>剩余车位：{{item.ParkFreeSpaceNumber}}/个&nbsp;</span>
+              <!-- <span class="price"> 约{{item.PriceAboutS}}元/小时</span> -->
+              <span class="price"> 首小时{{item.PriceFT}}元/小时,之后{{item.Price}}元/{{item.TimeSlice}}分钟</span>
+            </div>
+          </div>
+          
+          </ion-item>
+            <!-- 停车区s -->
+          <div *ngIf="(item.zone&&item.zone.length>0)&&!item.ishowQu" (click)="item.ishowQu=1" class="seeQ">查看停车区  <ion-icon name="arrow-down"></ion-icon></div>
+          <div *ngIf="item.ishowQu"  >
+          <ion-item class='item-eb item-qu' *ngFor="let itemz of item.zone" [hidden]="itemz.InList==0"  >
+         
+            <ion-thumbnail item-end (throttleClick)='goMapApp(itemz)'class="center">
+              <div class="center flex-column">
+              <div class="goIcon"></div>
+              <div class="distant">{{itemz.disText}}</div>
+            </div>
+            </ion-thumbnail>
+            <div>
+            <h2 class="pName">{{itemz.ZoneName}}<span *ngIf="itemz.IsOpen==0" class="colorRed">&nbsp;(暂未开放)</span></h2>
+            <!-- <p class="zhiChi">{{itemz.PayAbout}}·{{itemz.ParkAbout}}</p> -->
+            <div class="lessP">
+              <span>剩余车位：{{itemz.FreeSpaceNumber}}/个&nbsp;</span>
+              <!-- <span class="price"> 约{{itemz.PriceAboutS}}元/小时</span> -->
+            </div>
+          </div>
+          
+          </ion-item>
+          <div *ngIf="item.ishowQu" (click)="item.ishowQu=0" class="seeQ">收起停车区  <ion-icon name="arrow-up"></ion-icon></div>
+          </div>
+          <!-- 停车区 e-->
+        </div>
+        
+        <!-- <div *ngFor="let item of page.data; index as i" >
+        <ion-item *ngIf="i==1"class='item-eb' >
+         
+          <ion-thumbnail item-end (throttleClick)='goMapApp()'class="center">
+            <div class="center flex-column">
+            <div class="goIcon"></div>
+            <div>{{item.disText}}</div>
+          </div>
+          </ion-thumbnail>
+          <div (throttleClick)="goDetail(item.id)">
+          <h2>{{item.ParkName}}</h2>
+          <p>{{item.PayAbout}}·{{item.ParkAbout}}</p>
+          <p>剩余车位：{{item.ParkFreeSpaceNumber}}/个&nbsp;价格：{{item.PriceAboutS}}元/小时</p>
+        </div>
+        </ion-item>
+      </div> -->
+      <div (throttleClick)='goAllpark()' class="fujing">查看全部{{page.data.length}}个停车场</div>
+      </ion-list>
+   
+  </div>
+</ion-content>

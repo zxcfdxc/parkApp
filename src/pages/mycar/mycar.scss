@@ -1,0 +1,45 @@
+page-mycar {
+    .border-xu {
+        width: 86%;
+        height: 132px;
+        border-radius: 4px;
+        border: dashed 1px $themeColor;
+        margin-left: 7%;
+        margin-top: 15px;
+        font-size: 18px;
+        color: $themeColor;
+        line-height: 132px;
+        text-align: center;
+    }
+    ion-card-header{
+        height: 100px;
+        font-size: 25px;
+        letter-spacing: 2px;
+        line-height:  100px;
+        padding: 0px!important;
+        color: #333333;
+        text-align: center;
+    }
+    .card{
+        position: relative;
+    }
+    .dian{
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        padding: 5px 10px;
+    }
+    .layui-layer-content{
+        color: #666666;
+    }
+    .reCar{
+        width: 55px;
+    }
+     
+
+
+
+
+
+
+}

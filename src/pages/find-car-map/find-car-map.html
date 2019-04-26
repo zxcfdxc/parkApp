@@ -1,0 +1,53 @@
+<!--
+  Generated template for the SeeCarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>查看车位</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div class="seeCarMain">
+  <div class="left" #left  [ngStyle]="{'width':pageData.lWidth+'px'}">
+    <img  [ngStyle]="{'width':pageData.lWidth+'px'}" [src]="pageData.baseImgU+pageData.data.about?.ParkPic" >
+      
+    <button (throttleClick)="chosezone(item.id)" [class.selected]="item.id == pageData.zoneId" id="{{item.id}}" class="quKuang" *ngFor="let item of pageData.chewei.area;index as i" 
+      [ngStyle]="{'width':item.w*pageData.zoom+'px','height': item.h*pageData.zoom+'px','top':item.y*pageData.zoom+'px','left': item.x*pageData.zoom+'px'}">
+      <img *ngIf='item.id==pageData.carZoneId' [ngStyle]="{'top':item.y*pageData.zoom+item.h*pageData.zoom/4+'px','left': item.x*pageData.zoom+item.w*pageData.zoom+'px'}" src="./assets/imgs/che.png"   class="lbiao">
+      <!-- <img *ngIf='item.id==pageData.carZoneId' [ngStyle]="{'top':item.y*pageData.zoom+item.h*pageData.zoom/4+'px','left': item.x*pageData.zoom+item.w*pageData.zoom/2+'px'}" src="./assets/imgs/che.png"   class="lbiao"> -->
+    </button>
+    </div>
+  
+
+
+  <div class="mapMain">
+    <div class="mapRel" >
+        <img  [ngStyle]="{'width':pageData.rWidth+'px'}" src="{{pageData.baseImgU+pageData.zoneData.ZonePic}}">
+    
+    <div  *ngIf='pageData.zoneData.id==pageData.carZoneId' class="biao" [ngStyle]="{'top':pageData.data.DrawCoY*pageData.zoomR-59+'px','left': pageData.data.DrawCoX*pageData.zoomR+'px'}">
+        <!-- 车位 -->
+      <div class="biaoT"> {{pageData.data.SpaceNumber}}</div>
+      <img  src="./assets/imgs/che.png"   >
+      </div>
+    <!-- <img src="" alt="" class="ren"> -->
+  </div>
+  </div>
+ 
+</div>
+<!-- <div class="comBtnM  mgT10">
+    <button ion-button (throttleClick)='goMapApp()'>车场导航</button>
+  </div> -->
+<!-- <footer class='footer twoBtn fontC15'>
+    <div (throttleClick)='goChose(pageData.id)'  *ngIf='pageData.IfRecord&&pageData.IfRecord==1'> <ion-icon name="ios-time-outline"></ion-icon>&nbsp;预约</div>
+    <div class="shu"  *ngIf='pageData.IfRecord&&pageData.IfRecord==1'></div>
+    <div (throttleClick)='goMapApp()'><ion-icon name="ios-navigate-outline"></ion-icon>&nbsp; 导航</div>
+  </footer> -->
+
+</ion-content>

@@ -1,0 +1,142 @@
+page-recharge {
+    .xieMain{
+        text-align: center;
+        color: #777;
+    font-size: 12px;
+    &.con{
+        text-align: left;
+        padding:10px 20px;
+    }
+     span{
+         color:$themeColor;
+     }
+    }
+    background-color: #fafafa;
+    color: #333333;
+    .choseM{
+        background-color: #fff;
+        margin-bottom: 0.5rem;
+    }
+    .btnList{
+       
+    display: flex;
+    .btnMain:empty{
+        display: none!important; 
+        width: 0;
+    }
+    .btnMain{
+        width: 33%;
+     .btnItem{
+        &:not(.showI) input{
+            width: 0;
+            height: 0;
+            display: none;
+        }
+         display: inline-block;
+        
+         text-align: center;
+         label{
+             display: inline-block;
+            text-align: center;
+            font-size: 1.2rem;
+        color: #333333;
+        width: 100%;
+        min-width: 8.3rem;
+        height: 3.7rem;
+        line-height: 3.7rem;
+        background-color: #ffffff;
+        border-radius: 0.3rem;
+        border: solid 0.05rem #d6d6d6;
+            &.current{
+                border: solid 0.05rem  $themeColor;
+                color:  $themeColor;
+            }
+    
+         }
+        
+     }
+    }
+    
+    }
+    .inD{
+        // width: 20px;
+    label{
+        border: 0!important;
+    }
+    .otherIn{
+        border: solid 0.05rem #d6d6d6;
+        border-radius: 0.3rem;
+         height: 100%;
+         line-height: 3.7rem;
+         width: 100%;
+         padding-left: 5px;
+        // color: #fff;
+            
+            // &::-webkit-input-placeholder {
+            //     color: #999 ;
+            // }
+             &:focus{
+                font-size:12px;
+                opacity: 1;
+                color: #333;
+                border: solid 0.05rem  $themeColor;
+             }
+       
+        
+    }
+}
+    .choneTit{
+        margin-top: 1rem;
+        margin-left: 1.05rem;
+        font-size: 1.3rem;
+      
+	
+    }
+    ion-list-header.item{
+        margin-bottom: 0;
+        border-top: 0;
+        border-bottom: solid 1px #ededed;
+        text-align: center;
+    }
+    .payM{
+
+        ion-item{
+           
+            ion-label{
+             display: flex;
+             align-items:center;
+                img{
+                    vertical-align: middle;
+                    width: 2rem;
+                    height: 1.8rem;
+                    margin-right: 5px;
+                }
+                font-size: 1.4rem;
+           
+               
+            }
+        }
+        .item.item-block .item-inner {
+            border-bottom: 1px solid #ededed !important;
+          }
+    }
+    .sM{
+        padding: 10px 30px;
+
+        display: flex;
+        justify-content: space-around;
+        .sItem{
+            text-align: center;
+            .num{
+                color:$themeColor;
+                font-size: 16px;
+                
+            }
+            .text{
+margin-top: 3px;
+                color: #aaa;
+                font-size: 12px;
+            }
+        }
+    }
+}

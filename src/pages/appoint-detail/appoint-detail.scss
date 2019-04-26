@@ -1,0 +1,44 @@
+page-appoint-detail {
+    .scroll-content{
+        padding-bottom: 100px;
+    }
+    .seeCar{
+        font-size: 1.5rem;
+        color:$themeColor;
+        float: right;
+        margin: 10px;
+    }
+    .toolbar-title{
+        line-height: 30px;
+    }
+  .titRight{
+   
+      color: #fff;
+      float: right;
+      }
+  .titRight:before{
+    font-size: 30px;
+  }
+  .cheDetail{
+      margin-top: 5px;
+  }
+  .shouTit{
+    font-size: 11px;
+    padding: 10px 15px;
+}
+.shoucont{
+    justify-content: space-between;
+    padding:  10px 20px;
+}
+.shoucontB{
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+.showFei{
+    margin-top: 5px;
+}
+.two{
+    position: fixed;
+    bottom: 50px;
+}
+}

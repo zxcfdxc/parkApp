@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      附近
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <div class="map-init" style="position: absolute; z-index: 10; bottom: 127px; right: auto; top: auto; left: 16px;">
+    <div style="font-size: 11px; line-height: 18px;">
+        <div class="init-btn" id="initState" ontouchstart="return true;">
+            <b class="icon-location">
+            </b>
+        </div>
+    </div>
+</div>
+<div id="zoom-btn-container" style="position: absolute; z-index: 10; bottom: 127px; right: 16px; top: auto; left: auto;">
+    <div id="zin-btn" class="zoom-btn zoom-btn-in" ontouchstart="return true;">
+        <b class="zin " >  
+      <ion-icon name="add" ></ion-icon>
+    </b>
+    </div>
+    <div id="zout-btn" class="zoom-btn" ontouchstart="return true;">
+        <b class="zout " >
+            <ion-icon name="remove" ></ion-icon>
+        </b>
+        
+    </div>
+</div>
+<div style="position:absolute; top:50%;left:50%;transform:translate(-50%,-50%);">
+    <canvas id="indoormap" width="1080" height="1175">[Your browser is too old!]</canvas>
+</div>
+
+</ion-content>

@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+        账号管理
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="botlineEd">
+    <ion-item>
+        <ion-avatar item-end>
+            <img src="./assets/imgs/account/tou.png" alt="">
+          </ion-avatar>
+    头像
+    </ion-item>
+    <ion-item>
+        用户名
+        <ion-note item-end="" class="note note-ios">
+                {{pageData.UserName}}
+            </ion-note>
+        </ion-item>
+    <ion-item  (throttleClick)="changeName()">
+    姓名
+    <ion-note item-end="" class="note note-ios">
+            {{pageData.CompanyName}}
+            <ion-icon name="ios-arrow-forward"></ion-icon>
+        </ion-note>
+    </ion-item>
+    <ion-item (throttleClick)='changeP()'>
+       
+        修改密码
+        <ion-note (throttleClick)="changeName()" item-end="" class="note note-ios">
+                <ion-icon name="ios-arrow-forward"></ion-icon>
+            </ion-note>
+        </ion-item>
+        <!-- <ion-item>
+            性别
+            <ion-note item-end="" class="note note-ios">
+                未设置
+                </ion-note>
+            </ion-item> -->
+            <div class="comBtnM  ">
+                <button ion-button (throttleClick)='outLog()'>退出登录</button>
+              </div>
+  </ion-list>
+</ion-content>

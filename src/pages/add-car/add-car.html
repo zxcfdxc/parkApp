@@ -1,0 +1,145 @@
+<!--
+  Generated template for the AddCarPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{pageData.isSave?"添加车辆":"搜索车辆"}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="bgScrollf">
+  <div id="content">
+    <div id="carLicenseBox">
+      <div class="carLicenseTitle">
+        请填写真实有效的车牌号码
+      </div>
+      <div class="carLicenseMain">
+        <ul>
+          <li class="active">省</li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li class="xinnengyuan"></li>
+        </ul>
+      </div>
+     
+     
+    </div>
+    <div id="keyboardBox">
+      <!--<button id="changeContentBtn">ABC</button>
+      <button id="deleteBtn">X</button>-->
+      <div class="provienceBox" id="provienceBox">
+        <ul>
+          <li>鄂</li>
+          <li>京</li>
+          <li>津</li>
+          <li>渝</li>
+          <li>沪</li>
+          <li>冀</li>
+          <li>晋</li>
+          <li>辽</li>
+          <li>吉</li>
+          <li>黑</li>
+        </ul>
+        <ul>
+          <li>苏</li>
+          <li>浙</li>
+          <li>皖</li>
+          <li>闽</li>
+          <li>赣</li>
+          <li>鲁</li>
+          <li>豫</li>
+          <li>鄂</li>
+          <li>湘</li>
+          <li>粤</li>
+          <li>琼</li>
+        </ul>
+        <ul>
+          <li>川</li>
+          <li>贵</li>
+          <li>云</li>
+          <li>陕</li>
+          <li>甘</li>
+          <li>青</li>
+          <li>蒙</li>
+          <li>桂</li>
+          <li>宁</li>
+          <li>新</li>
+        </ul>
+        <ul>
+          <li class="changeContentBtn other">ABC</li>
+          <li>藏</li>
+          <li>使</li>
+          <li>领</li>
+          <li>警</li>
+          <li>学</li>
+          <li>港</li>
+          <li>澳</li>
+          <li class="deleteBtn other"><img src="./assets/imgs/backDeleteImg.jpg"/></li>
+        </ul>
+      </div>
+      <div class="textBox" id="textBox">
+        <ul>
+          <li>1</li>
+          <li>2</li>
+          <li>3</li>
+          <li>4</li>
+          <li>5</li>
+          <li>6</li>
+          <li>7</li>
+          <li>8</li>
+          <li>9</li>
+          <li>0</li>
+        </ul>
+        <ul>
+          <li>Q</li>
+          <li>W</li>
+          <li>E</li>
+          <li>R</li>
+          <li>T</li>
+          <li>Y</li>
+          <li>U</li>
+          <li>I</li>
+          <li>O</li>
+          <li>P</li>
+        </ul>
+        <ul>
+          <li>A</li>
+          <li>S</li>
+          <li>D</li>
+          <li>F</li>
+          <li>G</li>
+          <li>H</li>
+          <li>J</li>
+          <li>K</li>
+          <li>L</li>
+        </ul>
+        <ul>
+          <li class="changeContentBtn other">汉字</li>
+          <li>Z</li>
+          <li>X</li>
+          <li>C</li>
+          <li>V</li>
+          <li>B</li>
+          <li>N</li>
+          <li>M</li>
+          <li class="deleteBtn other"><img src="./assets/imgs/backDeleteImg.jpg"/></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="comBtnM ">
+      <button (throttleClick)='alertR()'  ion-button class="submitBtn" id="submitBtn">下一步</button>
+    <!-- <button *ngIf="pageData.StatusRecord<=0" ion-button (throttleClick)='yuYueCancel(pageData.id)'>取消预约</button>
+    <button ion-button (throttleClick)='freeCarInfo(pageData.id)'>我已到达</button> -->
+  </div>
+</ion-content>

@@ -1,0 +1,38 @@
+page-coupon-chose {
+    .quan{
+        background: url("../assets/imgs/youHui.png");
+        background-size: 100% 100%;
+        min-width: 18rem;
+        height: 14.15rem;
+        border-radius: 0.5rem;
+        margin: 1.35rem auto auto auto;
+        display: flex;
+        // justify-content: flex-end;
+        .label{
+            display: flex;
+            align-self: flex-end;
+            padding: 0;
+            justify-content: space-between;
+            .tetM{
+                font-size: 13px;
+                display: flex;
+                align-self: flex-end;
+                align-items: flex-end;
+                justify-content: space-between;
+                flex-direction: row;
+                width: 100%;
+                // padding: 10px 15px;
+                color: #fff;
+            
+            }
+            .money{
+                font-size: 24px;
+            }
+        }
+       
+    }
+    .notUse{
+        width: 80%;
+        margin-left: 10%;
+    }
+}

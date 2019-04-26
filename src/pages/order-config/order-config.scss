@@ -1,0 +1,52 @@
+page-order-config {
+    .titRight{
+   
+        color: #fff;
+        float: right;
+        }
+    .titRight:before{
+      font-size: 30px;
+    }
+    .divTiao{
+        align-items: center;
+    }
+  
+    button.fa{
+height: 20px;
+margin: 0;
+    }
+    .cheDetail{
+        margin-top: 5px;
+     
+    }
+    .shouTit{
+      font-size: 11px;
+      padding: 10px 15px;
+  }
+  .shoucont{
+      justify-content: space-between;
+      padding:  10px 20px;
+  }
+  .shoucontB{
+      justify-content: space-between;
+      padding: 10px 20px;
+  }
+  .showFei{
+      margin-top: 5px;
+  }
+  .two{
+      position: fixed;
+      bottom: 50px;
+  }
+  .youNum,.youNum0{
+      align-items: center;
+      ion-icon{
+        vertical-align: baseline;
+          margin-left: 3px;
+        //   padding-top: 3px;
+      }
+  }
+  .youNum0{
+      color: #afafaf;
+  }
+}

@@ -1,0 +1,29 @@
+<!--
+  Generated template for the ChongCheweiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header class="header-no-bo">
+
+  <ion-navbar>
+    <ion-title>充电</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="inWei">
+    <input type="text"  placeholder="请输入充电桩编号(即车位号)" [(ngModel)]="pageData.wei">
+  </div>
+   <div (throttleClick)='chosePlant()' class="flexChild justifyBetween  ComPai">
+     <div><img src="./assets/imgs/cp.png" alt="">选择车牌号</div>
+     <div class="plate">{{pageData.iPlate}} <ion-icon name="ios-arrow-forward"></ion-icon></div>
+   </div>
+
+
+  <div class="comBtnM fixBot24">
+      <button ion-button (throttleClick)='goChose()'>选择充电方式</button>
+    </div>
+</ion-content>

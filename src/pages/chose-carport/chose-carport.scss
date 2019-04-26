@@ -1,0 +1,33 @@
+page-chose-carport {
+.top{
+        width: 240px;
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background-color: #38bdef;
+        border-radius: 3px;
+        font-size: 23px;
+	letter-spacing: 1px;
+    color: #ffffff;
+    margin: 30px auto;
+}
+.seeImg{
+	height: 13px;
+	font-family: SourceHanSansCN-Regular;
+	font-size: 15px;
+	color: #68cef5;
+    text-align: right;
+    padding-right: 20px;
+    img{
+        max-height: 100%;
+    }
+}
+.comBtnM{
+    position: fixed;
+    bottom: 25px
+}
+ .input-wrapper .label  {
+color: #333!important;
+}
+
+}

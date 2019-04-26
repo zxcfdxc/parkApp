@@ -1,0 +1,5 @@
+<!-- Generated template for the YanzhengComponent component -->
+<div class="main">
+  <input type="text" class="comInput"  (keyup)="getYan($event)"  maxlength="6"  placeholder="请输入右侧验证码">
+  <img id="captcha" src='{{baseImgUrl}}' alt="验证码" title="点击刷新验证码" style="cursor: pointer;display: inline-block;margin-top: -4px;" (click)="changImg()">
+  </div>

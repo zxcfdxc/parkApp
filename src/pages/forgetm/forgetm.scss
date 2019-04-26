@@ -1,0 +1,33 @@
+page-forgetm {
+    .inputMain{
+        margin-top: 50px;
+        padding: 10px 18px;
+     text-align: center;
+        .inTel{
+            max-width: 360px;
+            width: 100%;
+                }
+    }
+    .faYanMain{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        max-width: 360px;
+    }
+    .inMain.yan{
+        margin-top: 10px;
+        margin-bottom: 10px;
+        
+    }
+    .yanBt{
+        height: 30px;
+    }
+    ::-webkit-input-placeholder { /* WebKit browsers */ 
+        font-size:14px;
+        } 
+        .tel{
+            margin-top: 30px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 18px;
+        }
+}

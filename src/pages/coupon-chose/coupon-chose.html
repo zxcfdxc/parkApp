@@ -1,0 +1,26 @@
+<!--
+  Generated template for the CouponChosePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>优惠券</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+   <button ion-button  block outline class="notUse" (throttleClick)="notUse()">不使用抵用券</button>
+   <ion-list >
+     <ion-item  class="quan" *ngFor="let item of pageData" (throttleClick)="chose(item)" >
+      <div class="tetM">  
+        <div class="endTime">过期时间:{{item.endTime}}</div>
+          <div class="money">{{item.amount}}元</div> 
+        </div>
+     </ion-item>
+   </ion-list>
+</ion-content>

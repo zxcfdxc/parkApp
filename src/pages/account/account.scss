@@ -1,0 +1,41 @@
+page-account {
+    .temSlides{
+        .swiper-slide{
+            font-size: 13px;
+            height: 38px!important;
+                .slide-zoom{
+                    text-align: right;
+                }
+        }
+       
+        height: 38px;
+        width: 90px;
+    }
+    .top {
+        width: 100%;
+        height: 140px;
+        background-color: #38bdef;
+        background: url('../assets/imgs/account/backg.png');
+        position: relative;
+        color: #ffffff;
+        align-items: center;
+        img {
+            width: 65px;
+            height: 65px;
+            background-color: #f2f2f2;
+            border-radius: 50px;
+            margin: auto 9px auto 18px;
+        }
+        .topU{
+                font-family: SourceHanSansCN-Regular;
+                font-size:15px;
+                letter-spacing: 1px;
+                height: 15px;
+        }
+        .xian{
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+    }
+}

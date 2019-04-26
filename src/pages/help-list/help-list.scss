@@ -1,0 +1,35 @@
+page-help-list {
+.list{
+    ion-item-group{
+        border-bottom: 1px solid #ededed;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        background-color: #fff;
+    }
+    .item-divider{
+        color: #000;
+        border-bottom: 0px;
+        height: 22px;
+        .label{
+            ion-icon{
+                font-size: 1.5rem;
+            }
+        }
+      
+    }
+    .item.item-block {
+        min-height: 2.4rem;
+        .item-inner {
+        border-bottom: 0 !important;
+        font-size: 1.2rem;
+        color: #888;
+         &.activated .item-inner .label{
+             color: #222;
+         }
+        .label{
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
+      }}
+} 
+}

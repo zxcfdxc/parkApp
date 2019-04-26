@@ -1,0 +1,89 @@
+<!--
+  Generated template for the ClubCardPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>月卡购买</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding  >
+      
+   <div class="card-hui">
+      <div class="card-type">
+          车都停车•{{pageData.choseData.name}}
+        </div>
+     <div class="day">有效期{{pageData.choseData.days}}天&nbsp;生效时段：{{pageData.canTime}}</div>
+   </div>
+   <div class="youTi">有效期{{pageData.choseData.days}}天(生效时段：{{pageData.canTime}})</div>
+   <ion-grid >
+     <ion-row>
+       <ion-col  col-6 *ngFor="let item of pageData.data">
+         <button  [class]="pageData.choseData.id==item.id?'choseItem mItem':'mItem'" (throttleClick)="
+         choseTimel(item);">
+          <span>{{item.money}}元 </span> <span class="decoration">{{item.OriginalPrice}}元</span>
+        </button>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+   <div (throttleClick)='chosePlant()' class="flexChild justifyBetween  ComPai ripple">
+    <div><img src="./assets/imgs/mothy/123lan.png" alt="">选择车牌号</div>
+    <div>
+    <div class="plate">{{pageData.iPlate}}</div>
+    <ion-icon name="ios-arrow-forward"></ion-icon> 
+  </div>
+  </div>
+  <!-- <button ion-item   class='flexChild justifyBetween  chosetime'    >
+    <ion-label><img src="./assets/imgs/choseCar/sj.png" alt="">激活时间</ion-label> 
+   
+    选择时间
+    <ion-datetime *ngIf="pageData.dateEnd" (throttleClick)='choseTime(true);styleTime()'
+    displayFormat="YYYY-MM-DD" pickerFormat="YYYY-MMMM-DDDD"
+    min="{{pageData.dateStart}}"  max="{{pageData.dateEnd}}" cancelText="取消" doneText="确认" [(ngModel)]="pageData.sqsj"></ion-datetime> 
+    <ion-icon name="ios-arrow-forward"></ion-icon> 
+  </button> -->
+    <label for="test1" class='flexChild justifyBetween chosetime  ComPai  '  (click)="choseTimel()">
+    <div><img src="./assets/imgs/choseCar/sj.png" alt="">激活时间</div> 
+   
+    <div>
+    <input  class="jihoTime" id="test1" readonly='readonly' placeholder="选择时间"/>
+    <ion-icon name="ios-arrow-forward"></ion-icon> 
+  </div>
+  </label>
+  <ion-item class='item-eb' >
+      <ion-label><img src="./assets/imgs/mothy/cc.png" alt=""> 选择停车场</ion-label>
+      <ion-select [(ngModel)]="pageData.parkId" (ngModelChange)="getPage()"   cancelText="取消"  okText="确定" >
+        <ion-option *ngFor="let item of  pageData.parkList" [value]="item.id" [hidden]="item.IsOpen==0">{{item.ParkName}}</ion-option>
+      </ion-select>
+      <ion-icon name="ios-arrow-forward"></ion-icon> 
+  </ion-item>
+  <!-- <div (throttleClick)='chosePlant()' class="flexChild justifyBetween  ComPai ripple">
+      <div><img src="./assets/imgs/mothy/123lan.png" alt="">选择车牌号</div>
+      <div>
+      <div class="plate">{{pageData.iPlate}}</div>
+      <ion-icon name="ios-arrow-forward"></ion-icon> 
+    </div>
+    </div> -->
+
+   <div class="shuo" [innerHtml]="Explain" >
+   <!-- <div class="tit">月卡说明</div>
+<div class="con">
+  <br> 1、 本月卡为车都停车场专用月卡，只针对本公司停车场有效，每张月卡只针对指定停车场，不能本公司所有停车场有效。
+ <br> 2、 月卡（季卡）有效期间在指定停车场停车不按次数单独收取费用。
+ <br> 3、 月卡（季卡）绑定车牌号，只针对绑定车辆有效，并且不能更改
+ <br> 4、 超出有效期时段，按照停车场收费规则正常收费。
+ <br> 5、 当前若无月卡，购买月卡后立即生效；当前若已有月卡，月卡可提前续费（一个月按照30天，季卡90天计算），自动延长相应有效期。
+ <br> 6、月卡有效期内提前退费请联系停车场管理部门，电话：84958812</div> -->
+
+   </div>
+  <div class="BtnM fixBot">
+    <button class="" ion-button full (throttleClick)='buy()'>立即购买</button>
+  </div>
+</ion-content>
+

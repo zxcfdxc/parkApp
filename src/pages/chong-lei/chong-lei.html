@@ -1,0 +1,47 @@
+<!--
+  Generated template for the ChongLeiPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>选择类型</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+<div class="top">
+<div class="flexChild item " (throttleClick)="pageData.select=1">
+  <img src="./assets/imgs/{{pageData.select==1?'xz.png':'wx.png'}}" alt="">自由充
+</div>
+
+<!-- 定时充 -->
+<div class="flexChild item  " (throttleClick)="pageData.select=2"  >
+  <img src="./assets/imgs/{{pageData.select==2?'xz.png':'wx.png'}}" alt="">定时充
+</div>
+<ion-item class="selecTime flexChild" *ngIf="pageData.select==2">
+ <!-- <div ></ion-item>  -->
+ <ion-label class="tit">选择充电时间</ion-label>
+ <ion-select class="time" [(ngModel)]="pageData.timeLength" cancelText="取消"  okText="确定" >
+  <ion-option *ngFor="let time of  pageData.timelist" [value]="time.length">{{time.name}}</ion-option>
+</ion-select>
+   <ion-icon name="ios-arrow-down"></ion-icon>
+</ion-item >
+
+
+<!-- 定量充 -->
+<div class="flexChild item " (throttleClick)="pageData.select=3">
+  <img src="./assets/imgs/{{pageData.select==3?'xz.png':'wx.png'}}" alt="">定量充（元）
+</div>
+<div class="flexChild item inputJ" *ngIf="pageData.select==3">
+ <input type="text" placeholder="输入充值金额" [(ngModel)]="pageData.money">
+</div>
+</div>
+    <div class="comBtnM fixBot24">
+        <button ion-button (throttleClick)='chong()'>立即充电</button>
+      </div>
+</ion-content>

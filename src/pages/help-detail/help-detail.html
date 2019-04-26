@@ -1,0 +1,21 @@
+<!--
+  Generated template for the HelpDetailPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>问题详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <div class="main">
+    <div class="tit">{{pageData.title}}</div>
+    <div class='con' [innerHTML]="pageData.content"></div>
+  </div>
+</ion-content>

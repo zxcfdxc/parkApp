@@ -1,0 +1,59 @@
+page-chong-lei {
+ .top{
+     .item{
+         align-items: center;
+         padding-left: 1.4rem;
+         padding-right: 1.4rem;
+            width: 36rem;
+            height: 5rem;
+            background-color: #ffffff;
+            box-shadow: inset 0rem -0.05rem 0rem 0rem 
+                #e6e6e6;
+        font-size: 1.4rem;
+        color: #000000;
+         img{
+            width: 2rem;
+            height: 2.05rem;
+            margin-right: 1rem;
+         }
+         &.inputJ{
+             input{
+                padding-left: 1.9rem;
+                border:none;
+             }
+           
+         }
+     }
+     .selecTime{
+          flex-direction: column;
+          align-items:center;
+          height: 13rem;
+          background-color: #ffffff;
+          box-shadow: inset 0rem -0.05rem 0rem 0rem 
+              #ededed;
+              justify-content: space-around;
+              padding: 2rem 0  ;
+              .tit{
+            font-size: 1.3rem;
+            color: #333333;
+          }
+          .time{
+            font-size: 1.8rem;
+            color: #38bdef;
+          }
+          ion-icon{
+           color: #cccccc;
+          }
+          ion-select{
+              padding:13px 8px;
+              .select-icon{
+                  display: none;
+              }
+          }
+          .item-inner{
+              border-bottom: 0px;
+          }
+     }
+   
+ }
+}

@@ -1,0 +1,92 @@
+page-club-card-show {
+    .card-hui{
+        background: url("../assets/imgs/clubCard.png");
+        background-size: 100% 100%;
+        min-width: 18rem;
+        height: 18rem;
+        border-radius: 0.5rem;
+        margin: 1rem auto 2rem auto;
+        position: relative;
+        width: 100%;
+        height: 57vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        .plate{
+            position: absolute;
+            top:  63px;
+            left: 8vw;
+            color: #fff;
+            font-size: 14px;
+        }
+        .card-type{
+            position: absolute;
+            color: #fff;
+            left: 6vw;
+            top: 30px;
+            font-size: 18px;
+        }
+        .sheng{
+            position: absolute;
+            top: 83px;
+            left: 8vw;
+            color: #fff;
+            font-size: 14px;  
+        }
+    }
+  
+    .bot{
+        height: 3.5rem;
+	background-color: rgba(0, 0, 0, 0.5);
+	box-shadow: 0rem 0.15rem 0.45rem 0rem 
+		rgba(3, 3, 3, 0.25);
+	border-radius: 0rem 0rem 0.5rem 0.5rem;
+    opacity: 0.5;
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+    padding-left: 0.95rem;
+    padding-right: 0.95rem;
+    margin: 3px;
+    .day{
+        color: #fff;
+        font-size: 1.2rem;
+    }
+   
+    .btns{
+        button{
+           
+        background-color: rgba(0, 0, 0, 0);
+            color: #fff;
+            font-size: 1.1rem;
+            width: 6rem;
+            height: 2rem;
+            border-radius: 1rem;
+            border: solid 0.05rem #ffffff;
+        }
+    }
+  
+    }
+   
+    .mItem{
+         text-align: center;
+         margin-left: 5px;
+         margin-right: 5px;
+           border:2px solid #e1e1e1;
+           border-radius: 4px;
+           height: 40px;
+           line-height: 40px;
+           width: 100%;
+           background-color: #fff;
+           &.choseItem{
+               border:2px solid $themeColor;
+               color: $themeColor;
+           }
+         
+    }
+    ion-col{
+       //  width: 33%!important;
+    }
+ 
+}

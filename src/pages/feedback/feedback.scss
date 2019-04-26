@@ -1,0 +1,54 @@
+page-feedback {
+.leiXing{
+    input{
+        width: 0;
+        height: 0;
+        display: none;
+    }
+display: flex;
+ .leiItem{
+     width: 33%;
+     text-align: center;
+     label{
+         display: inline-block;
+        text-align: center;
+        font-size: 1.2rem;
+    color: #333333;
+    min-width: 10.3rem;
+    height: 3.7rem;
+    line-height: 3.7rem;
+	background-color: #ffffff;
+	border-radius: 0.3rem;
+	border: solid 0.05rem #d6d6d6;
+        &.current{
+            background-color: $themeColor;
+            color: #fff;
+        }
+
+     }
+    
+ }
+
+}
+.tit{
+    width: 100%;
+    font-size: 1.2rem;
+    padding: 1.5rem 1.05rem 0.15rem 1.05rem;
+}
+.qMain{
+    text-align: center;
+    .qcontent{
+        padding: 1rem;
+        margin-top: 0.9rem;
+        font-size: 1.2rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 34.05rem;
+        height: 15rem;
+        background-color: #ffffff;
+        border-radius: 0.3rem;
+        border: solid 0.05rem #d6d6d6;
+    }
+}
+
+}

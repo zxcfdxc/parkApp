@@ -1,0 +1,87 @@
+<!--
+  Generated template for the HisMonDePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>账单详情</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class=" bgC16">
+<div class="top flexChild flex-column">
+    <div class="tit" *ngIf="pageData.type">
+     <img src="./assets/imgs/cdp.png" alt=""> <span>{{pageData.content}}</span>
+    </div>
+    <!-- <div class="tit"*ngIf="pageData.type==2">
+        <img src="./assets/imgs/yue.png" alt=""> <span>{{pageData.typename}}</span>
+       </div> -->
+<div class="money"> <span>{{pageData.money}}</span>元</div>
+
+
+
+
+<!-- <div class="statu">交易成功</div> -->
+<!-- // 1充值，2停车，3充电，4月卡 -->
+</div>
+
+<!-- <div  class="mid sessonCom"> -->
+    <div class="mid sessonCom" *ngIf="pageData.type==2">
+<div *ngIf="pageData.PlateNumber"><span>车牌号：</span><span>{{pageData.PlateNumber}}</span></div>
+<div *ngIf="pageData.ParkName"><span>停车场：</span><span>{{pageData.ParkName}}</span></div>
+<div *ngIf="pageData.addTime"><span>缴费时间：</span><span>{{pageData.addTime}}</span></div>
+<div *ngIf="pageData.TimeEnter"><span>驶入时间：</span><span>{{pageData.TimeEnter}}</span></div>
+<div *ngIf="pageData.TimeExit"><span>驶出时间：</span><span>{{pageData.TimeExit||"无"}}</span></div>
+<div *ngIf="pageData.TimeParking"><span>停车时长：</span><span>{{tools.timeStoLiveT(pageData.TimeParking*60,true)}}</span></div>
+</div>
+<div class="mid sessonCom" *ngIf="pageData.type==3">
+    <div *ngIf="pageData.PlateNumber"><span>车牌号：</span><span>{{pageData.plate}}</span></div>
+    <div *ngIf="pageData.ParkName"><span>停车场：</span><span>{{pageData.ParkName}}</span></div>
+    <div *ngIf="pageData.addTime"><span>缴费时间：</span><span>{{pageData.addTime}}</span></div>
+    <div *ngIf="pageData.startTime"><span>开始充电时间：</span><span>{{pageData.startTime}}</span></div>
+    <div *ngIf="pageData.endTime"><span>结束充电时间：</span><span>{{pageData.endTime}}</span></div>
+    <div *ngIf="pageData.timelength"><span>充电时长：</span><span>{{tools.timeStoLiveT(pageData.timelength*60,true)}}</span></div>
+    <div *ngIf="pageData.timelength"><span>充电量：</span><span>{{pageData.electricity}}度</span></div>
+    </div>
+
+<div  class="mid sessonCom" *ngIf="pageData.type==1">
+    <div *ngIf="pageData.PlateNumber"><span>车牌号：</span><span>{{pageData.PlateNumber}}</span></div>
+    <div *ngIf="pageData.addTime"><span>{{pageData.type==1?"充值":"支付"}}时间：</span><span>{{pageData.addTime}}</span></div>
+    </div>
+<!-- <div><span>订单编号：</span><span>{{pageData.id}}</span></div> -->
+<div class="mid sessonCom" *ngIf="pageData.type==4">
+    <div *ngIf="pageData.ParkName"><span>停车场：</span><span>{{pageData.ParkName}}</span></div>
+<div *ngIf="pageData.plateNum"><span>车牌号：</span><span>{{pageData.plateNum}}</span></div>
+<div *ngIf="pageData.addTime"><span>购买时间：</span><span>{{pageData.time}}</span></div>
+<div *ngIf="pageData.startTime"><span>生效时间：</span><span>{{pageData.startTime}}</span></div>
+<div *ngIf="pageData.endTime"><span>失效时间：</span><span>{{pageData.endTime}}</span></div>
+</div>
+<!-- </div> -->
+
+<div  class="bot sessonCom">
+  <div *ngIf="pageData.type==2"><span>费用总额：</span><span>{{pageData.Epayment*1+pageData.Cash*1+pageData.Fine*1}}元</span></div>
+<!-- <div><span>费用总额：</span><span>{{pageData.totalprice}}元</span></div> -->
+<div *ngIf="pageData.Epayment>0"><span>电子支付：</span><span>{{pageData.Epayment}}元</span></div>
+<div *ngIf="pageData.Coupon>0"><span>现金支付：</span><span>{{pageData.Cash}}元</span></div>
+<div *ngIf="pageData.Fine>0"><span>罚金：</span><span>{{pageData.Fine}}元</span></div>
+<div *ngIf="pageData.Coupon>0">
+  <span>优惠券：</span>
+  <!-- <span></span> -->
+  <span>{{pageData.Coupon}}</span>
+</div>
+
+<!-- <div>
+  <span>支付：</span>
+  <span>{{pageTools.paytype[pageData.paytype*1-1]}}</span>
+  <span>{{pageData.realprice}}元</span>
+</div> -->
+
+</div>
+</div>
+</ion-content>

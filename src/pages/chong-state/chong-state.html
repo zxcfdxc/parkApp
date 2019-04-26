@@ -1,0 +1,66 @@
+<!--
+  Generated template for the ChongStatePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>充电控制</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content >
+  <div class="waveWrapper waveAnimation">
+   <div class="topType">{{pageData.typeText}}</div>
+
+   <div class="cont">
+     <div *ngIf="pageData.soc" class="havC">{{pageData.soc}}</div>
+     <div class="plant" *ngIf='pageData.plate'>{{pageData.plate}}</div>
+      <div >车位{{pageData.ename}}</div>
+     <div class="chong">正在充电中</div>
+
+   </div>
+    
+
+
+    <div class="waveWrapperInner bgTop">
+      <div class="wave waveTop" style="background-image: url('./assets/imgs/wave/wave-top.png')"></div>
+    </div>
+    <div class="waveWrapperInner bgMiddle">
+      <div class="wave waveMiddle" style="background-image: url('./assets/imgs/wave/wave-mid.png')"></div>
+    </div>
+    <div class="waveWrapperInner bgBottom">
+      <div class="wave waveBottom" style="background-image: url('./assets/imgs/wave/wave-bot.png')"></div>
+    </div>
+  </div>
+ 
+
+
+
+  <div class="mid flexChild justifyAround">
+      <div class="item">
+        <img src="./assets/imgs/wave/c.png" alt="">
+        <div>{{pageData.electricity||0}}</div>
+        <div class="dan">度</div>
+      </div>
+      <div class="item">
+          <img src="./assets/imgs/wave/t.png" alt="">
+          <div>{{pageData.timelength||0}}</div>
+          <div class="dan">分钟</div>
+        </div>
+        <div class="item">
+            <img src="./assets/imgs/wave/m.png" alt="">
+            <div>{{pageData.price||0}}</div>
+            <div class="dan">元</div>
+          </div>
+    </div>
+
+    <div class="comBtnM fixBot24">
+        <button ion-button (throttleClick)='chanceChong()' >停止充电</button>
+      </div>
+
+</ion-content>
